@@ -9,10 +9,19 @@
         </encoder>
     </appender>
 
-    <logger name="org.springframework" level="INFO"/>
-    <logger name="io.dodn.springboot" level="DEBUG"/>
+    <appender name="SENTRY" class="io.sentry.logback.SentryAppender">
+        <options>
+            <dsn>YOUR_DSN</dsn>
+        </options>
+        <minimumEventLevel>WARN</minimumEventLevel>
+        <minimumBreadcrumbLevel>INFO</minimumBreadcrumbLevel>
+    </appender>
+
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="io.dodn.springboot" level="INFO"/>
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
+        <appender-ref ref="SENTRY"/>
     </root>
 </configuration>

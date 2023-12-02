@@ -1,14 +1,11 @@
+spring.profiles.active: local
+
 spring:
-  application:
-    name: practice-multi-module
-  profiles:
-    active: local
   config:
-    activate:
-      on-profile: local
     import:
       - logging.yml
-
+  mvc.throw-exception-if-no-handler-found: true
+  web.resources.add-mappings: false
 ---
 spring:
   config:

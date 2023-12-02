@@ -5,9 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
 class PracticeMultiModuleApplicationTests {
-
     @Test
     fun contextLoads() {
     }
-
 }
